@@ -21,6 +21,8 @@
 </head>
 
 <body>
+    <!-- start header  -->
+
     <header class="off-white">
         <div class="container-xxl">
             <nav class="navbar navbar-expand py-3">
@@ -56,8 +58,15 @@
         </div>
     </header>
 
+    <!-- end header  -->
+
+    <!-- start main  -->
+
     <main class="container-xxl">
-        <section class="mb-4 px-3">
+
+        <!-- start state section  -->
+
+        <section class="state-section px-3">
             <div class="row g-4">
                 <div class="col-6 col-md-4">
                     <div class="cards p-3 p-sm-4 rounded-4 d-flex align-items-center gap-3 bg-white">
@@ -91,7 +100,86 @@
                 </div>
             </div>
         </section>
+
+        <!-- end state section  -->
+
+
+        <!-- start header contact section  -->
+        <div class="row px-3">
+            <div class="col-12 col-xl-8">
+                <section class="mb-4">
+                    <div class="mb-4">
+                        <h2 class="fs-xxl fw-bold semi-black mb-1">All Contacts</h2>
+                        <p class="fs-sm main-gray m-0">Manage and organize your <span id="total-contact">0</span>
+                            contacts</p>
+                    </div>
+                    <div class="position-relative">
+                        <i class="position-absolute fa-solid fa-search search-icon"></i>
+                        <input class="search-bar w-100 bg-white rounded-4" type="text" name="searchInput"
+                            id="search-input" placeholder="Search by name, phone, or email...">
+                    </div>
+                </section>
+
+                <!-- end header contact section  -->
+
+
+                <!-- start display contact -->
+                <section>
+                    <div class="no-contact" id="no-contact">
+                        <i
+                            class="no-contact-icon fa-solid fa-address-book fa-2xl d-flex align-items-center justify-content-center rounded-4"></i>
+                        <p class="fs-sm text-center mb-1 sub-gray">No contacts found</p>
+                        <p class="fs-xs text-center m-0 no-text">Click "Add Contact" to get started</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- end display contact -->
+
+
+            <!-- start side  -->
+            <div class="col-12 col-xl-4">
+                <aside>
+                    <div class="category-card rounded-4 mb-4">
+                        <div class="category-container fav-container d-flex align-items-center rounded-top-4">
+                            <i
+                                class="favorites-icon white fa-sm fa-solid fa-star me-3 d-flex align-items-center justify-content-center rounded-3"></i>
+                            <div class="">
+                                <h2 class="fw-bolder m-0 fs-sm mb-1 semi-black">Favorites</h2>
+                                <p class="fs-xxs m-0 main-gray d-xl-block d-none">Quick access to starred contacts</p>
+                                <p class="fs-xxs m-0 main-gray d-xl-none d-block">Quick access</p>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="no-category" id="no-favorites">
+                                <p class="fs-xs no-text">No favorites yet</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-card rounded-4">
+                        <div class="category-container emp-container d-flex align-items-center rounded-top-4">
+                            <i
+                                class="emergency-icon white fa-sm fa-solid fa-heart-pulse me-3 d-flex align-items-center justify-content-center rounded-3"></i>
+                            <div class="">
+                                <h2 class="fw-bolder m-0 fs-sm mb-1 semi-black">Emergency</h2>
+                                <p class="fs-xxs m-0 main-gray d-xl-block d-none">Important contacts for urgent calls</p>
+                                <p class="fs-xxs m-0 main-gray d-xl-none d-block">Urgent contacts</p>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="no-category" id="no-emergency">
+                                <p class="fs-xs no-text">No emergency contacts</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- end side  -->
+        </div>
     </main>
+
+    <!-- end main  -->
 
     <script src="js/script.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
