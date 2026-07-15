@@ -30,9 +30,12 @@ body {
     --main-gray: #717988;
     --sub-gray: #6a7282;
     --search-icon: #99A1AF;
+    --mid-gray: #f6f3f4;
     --border-gray: #E5E7EB;
     --dark-gray: #364153;
+    --darken-gray: #4A5565;
     --no-contact: #D1D5DC;
+    --inp-color: #F9FAFB;
 
     /* font size  */
     --fs-xxs: 10px;
@@ -126,6 +129,10 @@ body {
     color: var(--sub-gray);
 }
 
+.dark-gray {
+    color: var(--dark-gray);
+}
+
 /* end globle feature */
 
 
@@ -137,7 +144,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1;
 }
 
 .logo-icon {
@@ -248,13 +255,16 @@ main {
 
 .search-bar {
     padding: 14px 16px 14px 44px;
+}
+
+.input-style {
     color: var(--dark-gray);
     outline: none;
     border: 1px solid var(--border-gray);
     transition: border 0.2s;
 }
 
-.search-bar:focus {
+.input-style:focus {
     border-color: var(--border-purple);
     outline: 3px solid var(--lighter-purple);
 }
@@ -324,6 +334,133 @@ main {
 }
 
 /* end aside  */
+
+
+/* start form section */
+
+.form-section {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
+.contact-form {
+    width: 512px;
+    max-width: 512px;
+    height: 90vh;
+    max-height: 90vh;
+}
+
+.form-header {
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.x-btn {
+    background-color: transparent;
+    width: 36px;
+    height: 36px;
+    transition: 0.2s;
+    color: var(--search-icon);
+}
+
+.x-btn:hover {
+    background-color: var(--light-gray);
+    color: var(--darken-gray);
+}
+
+.form-body {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(90vh - 80px);
+    scrollbar-width: none;
+    overflow: auto;
+}
+
+.phone-img {
+    width: 96px;
+    height: 96px;
+    background: var(--blue-gradient);
+}
+
+.chose-contact {
+    background-color: var(--mid-gray);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+form-btn .chose-contact:hover {
+    background-color: var(--border-gray);
+}
+
+.form-inp {
+    padding: 12px 16px;
+    background-color: var(--inp-color);
+    color: var(--semi-black);
+}
+
+.form-inp:focus {
+    background-color: var(--white);
+}
+
+.group-select {
+    appearance: none;
+}
+
+textarea {
+    resize: none;
+    height: 65.6px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+.save-btn {
+    gap: 8px;
+    background: linear-gradient(to right,
+            var(--sub-purple),
+            var(--light-purple));
+    transition: all 0.2s ease;
+}
+
+.save-btn:hover {
+    box-shadow:
+        0 10px 15px -3px var(--purple-shadow),
+        0 4px 6px -4px var(--purple-shadow);
+}
+
+.categ-label {
+    transition: 0.2s;
+}
+
+.categ-label:hover label {
+    color: var(--semi-black);
+}
+
+.heart {
+    color: #FF2056;
+}
+
+.cancel-btn {
+    background-color: var(--light-gray);
+    transition: 0.2s;
+}
+
+.cancel-btn:hover {
+    background-color: var(--border-gray);
+}
+
+.form-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+}
+
+/* end form section */
 
 
 /* media */

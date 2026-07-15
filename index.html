@@ -115,7 +115,7 @@
                     </div>
                     <div class="position-relative">
                         <i class="position-absolute fa-solid fa-search search-icon"></i>
-                        <input class="search-bar w-100 bg-white rounded-4" type="text" name="searchInput"
+                        <input class="search-bar input-style w-100 bg-white rounded-4" type="text" name="searchInput"
                             id="search-input" placeholder="Search by name, phone, or email...">
                     </div>
                 </section>
@@ -162,7 +162,8 @@
                                 class="emergency-icon white fa-sm fa-solid fa-heart-pulse me-3 d-flex align-items-center justify-content-center rounded-3"></i>
                             <div class="">
                                 <h2 class="fw-bolder m-0 fs-sm mb-1 semi-black">Emergency</h2>
-                                <p class="fs-xxs m-0 main-gray d-xl-block d-none">Important contacts for urgent calls</p>
+                                <p class="fs-xxs m-0 main-gray d-xl-block d-none">Important contacts for urgent calls
+                                </p>
                                 <p class="fs-xxs m-0 main-gray d-xl-none d-block">Urgent contacts</p>
                             </div>
                         </div>
@@ -177,6 +178,121 @@
 
             <!-- end side  -->
         </div>
+
+        <!-- start form -->
+
+        <section class="form-section position-fixed d-flex justify-content-center align-items-center" id="form-section">
+            <div class="contact-form bg-white rounded-4 overflow-hidden">
+                <div
+                    class="form-header d-flex align-items-center justify-content-between position-sticky p-3 rounded-top-4">
+                    <h2 class="fs-lg fw-bolder semi-black m-0">Add New Contact</h2>
+                    <button id="exit-btn"
+                        class="x-btn border-0 rounded-3 d-flex justify-content-center align-items-center">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="form-body p-4">
+                    <form action="">
+                        <div class="add-img d-flex justify-content-center align-items-center flex-column gap-3 mb-4">
+                            <div class="phone-img rounded-circle d-flex justify-content-center align-items-center"
+                                id="tel-img">
+                                <i id="contact-icon" class=" fa-solid fa-user fa-2xl white"></i>
+                            </div>
+                            <label for="contact-photo" class="chose-contact px-3 py-2 fs-sm rounded-3"><i
+                                    class="fa-solid fa-camera me-1 sub-gray"></i><span
+                                    class="fw-medium dark-gray">Change Photo</span></label>
+                            <input class="d-none" type="file" name="contactPhoto" id="contact-photo">
+                        </div>
+                        <!-- name -->
+                        <div class="full-name d-flex flex-column mb-3">
+                            <label for="full-name" class="mb-2 dark-gray">Full Name <span class="text-danger">*</span></label>
+                            <input class="input-style form-inp w-100 bg-white rounded-4 fs-xs" type="text"
+                                name="fullName" id="full-name" placeholder="Enter full name">
+                            <p id="contact-name-error" class="m-0 mt-2 text-danger fs-xxs">Name should contain only
+                                letters and spaces (2-50 characters)</p>
+                        </div>
+                        <!-- phone -->
+                        <div class="full-name d-flex flex-column mb-3">
+                            <label for="phone-number" class="mb-2 dark-gray">Phone Number <span
+                                    class="text-danger">*</span></label>
+                            <input class="input-style form-inp w-100 bg-white rounded-4 fs-xs" type="text"
+                                name="phoneNumber" id="phone-number" placeholder="e.g., 01012345678">
+                            <p id="contact-phone-error" class="m-0 mt-2 text-danger fs-xxs">Please enter a valid
+                                Egyptian
+                                phone number</p>
+                        </div>
+                        <!-- email -->
+                        <div class="full-name d-flex flex-column mb-3">
+                            <label for="email" class="mb-2 dark-gray">Email Address</label>
+                            <input class="input-style form-inp w-100 bg-white rounded-4 fs-xs" type="text" name="email"
+                                id="email" placeholder="name@example.com">
+                            <p id="contact-mail-error" class="m-0 mt-2 text-danger fs-xxs">Please enter a valid email
+                                address</p>
+                        </div>
+                        <!-- address -->
+                        <div class="full-name d-flex flex-column mb-3">
+                            <label for="address" class="mb-2 dark-gray">Address</label>
+                            <input class="input-style form-inp w-100 bg-white rounded-4 fs-xs" type="text"
+                                name="address" id="address" placeholder="Enter Address">
+                        </div>
+                        <!-- group -->
+                        <div class="full-name d-flex flex-column mb-3">
+                            <label for="group" class="mb-2 dark-gray">Group</label>
+                            <select class="group-select input-style form-inp w-100 bg-white rounded-4 fs-xs"
+                                name="group" id="group">
+                                <option value="select-group">Select a Group</option>
+                                <option value="family">Family</option>
+                                <option value="friends">Friends</option>
+                                <option value="work">Work</option>
+                                <option value="school">School</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <!-- note -->
+                        <div class="note d-flex flex-column mb-4">
+                            <label for="note" class="mb-2 dark-gray">Notes</label>
+                            <textarea class="input-style form-inp w-100 bg-white rounded-4 fs-xs" name="note" id="note"
+                                placeholder="Add notes about this contact"></textarea>
+                        </div>
+                        <!-- check box -->
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="d-flex align-items-center gap-2 categ-label">
+                                <input type="checkbox" name="favorite" id="fav">
+                                <label for="fav" class="fs-xs gap-2 dark-gray"><i
+                                        class="fa-solid fa-star text-warning"></i>
+                                    <span>Favorite</span></label>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 categ-label">
+                                <input type="checkbox" name="emergency" id="emergency">
+                                <label for="emergency" class="fs-xs gap-2 dark-gray"><i
+                                        class="fa-solid fa-heart-pulse heart"></i>
+                                    <span>Emergency</span></label>
+                            </div>
+                        </div>
+                        <!-- form btn -->
+                        <div class="btn-container">
+                            <div class="row align-items-center flex-wrap-reverse">
+                                <div class="col-12 col-sm-6">
+                                    <button id="cancel"
+                                        class="cancel-btn form-btn fw-semibold rounded-4 w-100 border-0 dark-gray">Cancel</button>
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3 mb-sm-0">
+                                    <button
+                                        class="save-btn form-btn fw-semibold white d-flex align-items-center justify-content-center border-0 rounded-4 w-100"
+                                        id="save-contact">
+                                        <i class="fa-solid fa-check"></i>
+                                        <spanf>Save Contact</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- end form -->
+
     </main>
 
     <!-- end main  -->
