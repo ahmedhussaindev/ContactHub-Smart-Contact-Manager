@@ -9,6 +9,7 @@
 
 body {
     font-family: "Inter", sans-serif;
+    background-color: var(--main-color);
 }
 
 :root {
@@ -17,6 +18,7 @@ body {
     --off-white: #FDFDFE;
     --light-gray: #F3F4F6;
     --lighter-gray: #F1F2F4;
+    --main-color: #f8fafc;
     --black: #000;
     --semi-black: #151C2C;
     --purple: #7720ED;
@@ -36,6 +38,19 @@ body {
     --fs-xl: 21px;
     --fs-xxl: 28px;
     --fs-3xl: 36px;
+
+    /* gradient and shadow */
+    --blue-gradient: linear-gradient(to bottom right, #3080ff, #2563eb);
+    --blue-shadow: 0 10px 15px -3px #3080ff40,
+        0 4px 6px -4px #3080ff40;
+
+    --orange-gradient: linear-gradient(to bottom right, #fbbf24, #f97316);
+    --orange-shadow: 0 10px 15px -3px #f99c0040,
+        0 4px 6px -4px #f99c0040;
+
+    --red-gradient: linear-gradient(to bottom right, #ff2357, #dc2626);
+    --red-shadow: 0 10px 15px -3px #ff235740,
+        0 4px 6px -4px #ff235740;
 
 }
 
@@ -79,8 +94,12 @@ body {
     color: var(--white);
 }
 
+.bg-white {
+    background-color: var(--white);
+}
+
 .off-white {
-    color: var(--off-white);
+    background-color: var(--off-white);
 }
 
 .semi-black {
@@ -93,6 +112,10 @@ body {
 
 .main-gray {
     color: var(--main-gray);
+}
+
+.sub-gray {
+    color: var(--sub-gray);
 }
 
 /* end globle feature */
@@ -161,11 +184,49 @@ header {
 /* end Navbar */
 
 
-/* start main section */
+/* start state section */
+
+main {
+    padding: 32px 24px;
+}
+
+.cards {
+    height: 100%;
+    border: 1px solid var(--light-gray);
+    box-shadow:
+        0 1px 3px #0000001a,
+        0 1px 2px #0000000f;
+    transition: box-shadow 0.15s ease;
+}
+
+.cards:hover {
+    box-shadow:
+        0 4px 6px -1px #0000001a,
+        0 2px 4px -2px #0000001a;
+}
+
+.state-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.total-icon {
+    background: var(--blue-gradient);
+    box-shadow: var(--blue-shadow);
+}
+
+.favorites-icon {
+    background: var(--orange-gradient);
+    box-shadow: var(--orange-shadow);
+}
+
+.emergency-icon {
+    background: var(--red-gradient);
+    box-shadow: var(--red-shadow);
+}
 
 
-
-/* end main section */
+/* end state section */
 
 
 /* media */
@@ -185,6 +246,12 @@ header {
         width: 36px;
         height: 36px;
     }
+
+    .state-icon {
+        width: 44px;
+        height: 44px;
+    }
+
 }
 
 /* sm */
