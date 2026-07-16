@@ -249,6 +249,33 @@ function displayContacts() {
             </span>`;
         }
 
+        var emailBox = "";
+        if (contactList[i].email != "") {
+            emailBox = `
+            <div class="d-flex align-items-center gap-2 mb-2">
+                <i class="mail-icn mail-link-icn catg-icn fa-solid fa-envelope rounded-2 d-flex justify-content-center align-items-center"></i>
+                <span class="mail-text dark-gray fs-sm">${contactList[i].email}</span>
+            </div>
+            `;
+        }
+
+        var locationBox = "";
+        if (contactList[i].location != "") {
+            locationBox = `
+            <div class="d-flex align-items-center gap-2 mb-3">
+                <i class="location-icn catg-icn fa-solid fa-location-dot rounded-2 d-flex justify-content-center align-items-center"></i>
+                <span class="location-text dark-gray fs-sm">${contactList[i].location}</span>
+            </div>
+            `;
+        }
+
+        var mailBtn = "";
+        if (contactList[i].email != "") {
+            mailBtn = `
+            <a class="mail-icn mail-link rounded-3 text-decoration-none d-flex justify-content-center align-items-center" href="mailto:${contactList[i].email}"><i class="fa-solid fa-envelope fa-xs"></i></a>
+            `;
+        }
+
         var emergencyBox = "";
         if (contactList[i].emergency) {
             emergencyBox = `
@@ -310,14 +337,8 @@ function displayContacts() {
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center gap-2 mb-2">
-                    <i class="mail-icn mail-link-icn catg-icn fa-solid fa-envelope rounded-2 d-flex justify-content-center align-items-center"></i>
-                    <span class="mail-text dark-gray fs-sm">${contactList[i].email}</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-2 mb-3">
-                        <i class="location-icn catg-icn fa-solid fa-location-dot rounded-2 d-flex justify-content-center align-items-center"></i>
-                        <span class="location-text dark-gray fs-sm">${contactList[i].location}</span>
-                    </div>
+                    ${emailBox}
+                    ${locationBox}
                     <div class="contact-category d-flex flex-wrap gap-2">
                         ${groupBox}
                         ${emergencyBox}
@@ -326,7 +347,7 @@ function displayContacts() {
                 <div class="card-bottom rounded-bottom-4 d-flex align-items-center justify-content-between">
                     <div id="tel-contact" class="d-flex gap-2">
                         <a class="tel-link tel rounded-3 bg-success-subtle text-success text-decoration-none d-flex justify-content-center align-items-center" href="tel:${contactList[i].phone}"><i class="fa-solid fa-phone fa-xs"></i></a>
-                        <a id="mailto" class="mail-icn mail-link rounded-3 text-decoration-none d-flex justify-content-center align-items-center" href="mailto:${contactList[i].email}"><i class="fa-solid fa-envelope fa-xs"></i></a>
+                        ${mailBtn}
                     </div>
                     <div class="itaraction-btn d-flex align-items-center gap-2">
                         <button onclick="toggleFavorite(${i})" class="rounded-3 fav-bt border-0 ${favoriteBtnClass}"><i class="${favoriteBtn}"></i></button>
