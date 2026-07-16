@@ -259,6 +259,39 @@ function displayContacts() {
             `;
         }
 
+        var favoriteBtn = "";
+        var emergencyBtn = "";
+
+        if (contactList[i].favorite == true) {
+            favoriteBtn = "fa-solid fa-star text-warning";
+        }
+        else {
+            favoriteBtn = "fa-regular fa-star";
+        }
+
+        if (contactList[i].emergency == true) {
+            emergencyBtn = "fa-solid fa-heart text-danger";
+        }
+        else {
+            emergencyBtn = "fa-regular fa-heart";
+        }
+
+        var favoriteBtnClass = "";
+        var emergencyBtnClass = "";
+        if (contactList[i].favorite) {
+            favoriteBtnClass = "bg-warning-subtle";
+        }
+        else {
+            favoriteBtnClass = "";
+        }
+
+        if (contactList[i].emergency) {
+            emergencyBtnClass = "bg-danger-subtle";
+        }
+        else {
+            emergencyBtnClass = "";
+        }
+
         box += `
        <div class="col-12 col-sm-6">
             <div class="contact-card cards bg-white rounded-4">
@@ -296,8 +329,8 @@ function displayContacts() {
                         <a id="mailto" class="mail-icn mail-link rounded-3 text-decoration-none d-flex justify-content-center align-items-center" href="mailto:${contactList[i].email}"><i class="fa-solid fa-envelope fa-xs"></i></a>
                     </div>
                     <div class="itaraction-btn d-flex align-items-center gap-2">
-                        <button onclick="toggleFavorite(${i})" class="rounded-3 fav-bt border-0"><i class="fa-regular fa-star"></i></button>
-                        <button onclick="toggleEmergency(${i})" class="rounded-3 emrg-bt border-0"><i class="fa-regular fa-heart"></i></button>
+                        <button onclick="toggleFavorite(${i})" class="rounded-3 fav-bt border-0 ${favoriteBtnClass}"><i class="${favoriteBtn}"></i></button>
+                        <button onclick="toggleEmergency(${i})" class="rounded-3 emrg-bt border-0 ${emergencyBtnClass}"><i class="${emergencyBtn}"></i></button>
                         <button onclick="setUpdateContact(${i})" class="rounded-3 edit-bt border-0 sub-gray"><i class="fa-solid fa-pen"></i></button>
                         <button onclick="deleteContact(${i})" class="rounded-3 delete-bt border-0 sub-gray"><i class="fa-solid fa-trash"></i></button>
                     </div> 
